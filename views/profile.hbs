@@ -1,0 +1,56 @@
+<div id="user">
+    <div class="top-section">
+        {{!-- <span style="float: left; margin: 10px; padding: 5px; border: black 1px solid;">Profile</span> --}}
+        <span style="float: right; margin: 10px; padding: 5px; border: black 1px solid;"><a style="text-decoration: none;" href="/auth/logout">LOGOUT</a></span>
+    </div>
+    <div class="middle-section">
+        <img src="{{user.image}}" alt="{{user.firstName}}" id="profileImage" />
+        <span style="margin: auto;">{{user.firstName}} | {{user.designation}}</span>
+    </div>
+    <div class="bottom-section">
+        <form action="/profile/api/{{user._id}}" method="POST">
+            <input type='hidden' name='_method' value='PUT'>
+            <input type='text' name='firstName' value='{{user.firstName}}' placeholder="First Name">
+            <input type='text' name='lastName' value='{{user.lastName}}' placeholder="Last Name">
+            <input type='text' name='email' value='{{user.email}}' placeholder="E-Mail">
+            <input type='text' name='phone' value='{{user.phone}}' placeholder="Mob. No.">
+            <br>
+            <input style="margin-top: 10px;" type="submit" value="Update">
+        </form>
+    </div>
+</div>
+<hr>
+
+
+<div id="queries">
+    <span style="text-align: center; width:100%">👇My Recents Reports👇</span>
+    {{#each data}}
+    <div class="card">
+        <div class="container1">
+            <br>
+            <p>🔴 {{ this.report.description }} </p>
+            <p>✅ {{ this.response.description }} </p>
+            <h6>
+                <span style="right: 0;"> {{formatDate this.createdAt 'MMMM Do YYYY, h:mm:ss a'}} </span>
+            </h6>
+        </div>
+            
+    </div>
+
+    {{/each}}
+</div>
+
+
+
+
+<script>
+    var userId = location.pathname.slice(9);
+    localStorage.setItem('userId', userId);
+
+    setTimeout(() => {
+        var profileBtn = document.getElementById('profileBtn');
+        profileBtn.href = '/profile/' + localStorage.getItem('userId');   
+    }, 2000);
+        
+
+</script>
