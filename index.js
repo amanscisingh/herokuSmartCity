@@ -61,7 +61,7 @@ app.use(session({
   secret: 'keyboard cat',
   resave: false,
   saveUninitialized: false,
-  store: MongoStore.create({ mongoUrl: 'mongodb://localhost/4000' })
+  store: MongoStore.create({ mongoUrl: 'mongodb://waste-management-007.herokuapp.com/' })
 }))
 
 
