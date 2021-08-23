@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/amanscisingh/smartVaranasiNode.git"
+    "url": "git+https://github.com/amanscisingh/herokuSmartCity.git"
   },
   "author": "Aman Singh",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/amanscisingh/smartVaranasiNode/issues"
+    "url": "https://github.com/amanscisingh/herokuSmartCity/issues"
   },
-  "homepage": "https://github.com/amanscisingh/smartVaranasiNode#readme",
+  "homepage": "https://github.com/amanscisingh/herokuSmartCity#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "connect-mongo": "^4.4.1",
