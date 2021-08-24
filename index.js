@@ -14,16 +14,11 @@ import authRoute from './route/authRoute.js';
 import bodyParser from 'body-parser';
 import methodOverride from 'method-override';
 import dotenv from 'dotenv';
-import passport from 'passport';
 import session from 'express-session';
 import MongoStore from 'connect-mongo';
 
 // Load config
 dotenv.config({ path: './config/config.env' });
-
-// Passport config
-import { pass } from './config/passport.js';
-pass(passport);
 
 
 const PORT = process.env.PORT || 3000;
@@ -55,19 +50,10 @@ app.set('view engine', '.hbs');
 
 
 // setting up session
-app.set('trust proxy', 1) // trust first proxy
-app.use(session({
-  key: 'user_sid',
-  secret: 'keyboard cat',
-  resave: false,
-  saveUninitialized: false,
-  store: MongoStore.create({ mongoUrl: 'mongodb://waste-management-007.herokuapp.com/' })
-}))
+
 
 
 // Setting up passport middleware
-app.use(passport.initialize());
-app.use(passport.session());
 
 
 //setting up public folder
