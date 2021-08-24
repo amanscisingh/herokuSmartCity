@@ -276,11 +276,11 @@ form{
 
 /* coming soon css */
 .comingSoonText{
-    width: 80%;
-    height: 25%;
+    width: 100%;
+    height: 30%;
     background-color: #fafdff;
     text-align: center;
-    padding-top: 65px;
+    padding-top: 70px;
     font-size: xxx-large;
 }
 
