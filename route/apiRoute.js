@@ -4,6 +4,7 @@ import Bin from '../model/bin-schema.js';
 import Tasks from '../model/tasks.js'
 import QueryData from '../model/query-data.js'
 import Broadcasts from '../model/broadcasts.js'
+import { getAll, getByID, getCoordinates, addCoordinates } from '../controller/user-controller.js'
 
 // get wards on input of zone
 apiRoute.get('/zone/:zone', async (req, res) => {
@@ -140,4 +141,13 @@ apiRoute.get('/topBroadcasts', async (req, res) => {
         res.redirect('/');
     }
 })
+
+
+apiRoute.get('/', getAll);
+apiRoute.get('/:number',getByID);
+apiRoute.get('/coordinates/:Locality', getCoordinates);
+apiRoute.post('/coordinates/:Locatity/:employeeID/:employeeName', addCoordinates);
+
+
+
 export default apiRoute;
