@@ -10,7 +10,7 @@ import bin from '../model/bin-schema.js';
 
 defaultRoute.get('/', (req, res) => {
     
-    res.render('home');
+    res.render('intro', { layout: 'adminLayout'  });
 });
 
 
