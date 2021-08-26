@@ -143,8 +143,8 @@ apiRoute.get('/topBroadcasts', async (req, res) => {
 })
 
 
-apiRoute.get('/', getAll);
-apiRoute.get('/:number',getByID);
+apiRoute.get('/get', getAll);
+apiRoute.get('/get/:number',getByID);
 apiRoute.get('/coordinates/:Locality', getCoordinates);
 apiRoute.post('/coordinates/:Locatity/:employeeID/:employeeName', addCoordinates);
 
